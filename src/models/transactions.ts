@@ -11,18 +11,6 @@ const Transaction = database.define('transactions', {
         primaryKey:true
 
     },
-
-    debitedAccountId: {
-        type: Sequelize.INTEGER,
-        allowNull:false
-        
-    },
-
-    creditedAccountId :{
-        type: Sequelize.INTEGER,
-        allowNull:false
-
-    },
     value :{
         type: Sequelize.DECIMAL,
         allowNull:false
