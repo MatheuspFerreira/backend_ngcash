@@ -1,4 +1,4 @@
 export default interface ICreateLogin {
-  email: string;
+  username: string;
   password: string;
 }

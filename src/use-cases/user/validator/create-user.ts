@@ -4,7 +4,7 @@ export  async function verifyData (data:any) {
     if(data.username.length < 3 ) {
         return ({
             error:true, 
-            message:"Error, sername precisa ter no minímo 3 caracteres "
+            message:"Error, username precisa ter no minímo 3 caracteres "
         })
         
     }else if(data.password.length < 8){

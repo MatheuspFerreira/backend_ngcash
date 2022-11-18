@@ -1,10 +1,6 @@
 import Jwt from 'jsonwebtoken';
 const SECRET="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ"
 
-
-
-
-
 interface ITokenUser {
     
   id: string
@@ -14,21 +10,21 @@ interface ITokenUser {
   
 }
 
-export function createToken(user: ITokenUser) {
+export async function createToken(user: ITokenUser) {
   return {
         token: Jwt.sign({
             
-            id:user.id,
-            username:user.username,
-            accountId:user.accountId
+          id:user.id,
+          username:user.username,
+          accountId:user.accountId
 
             
 
-        }, SECRET)
-    }
+        }, SECRET, { expiresIn: '24h' })
+      }
 }
 
-export function verifyToken(token: string) {
+export async function verifyToken(token: string) {
   try {
     // @todo: Verificar se o usuário ainda existe
     
@@ -44,6 +40,6 @@ export function verifyToken(token: string) {
   }
 }
 
-export function decodeToken(token: string) {
+export async function decodeToken(token: string) {
   return Jwt.decode(token);
 }

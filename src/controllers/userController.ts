@@ -11,10 +11,17 @@ export default  {
             return res.status(500).send(newUser)
 
         }else {
-            return res.status(200).send(newUser)
+            return res.status(200).send(
+                {
+                    success:true, 
+                    message:"user created"
+                }
+            )
         };
 
     }
+
+
 
 }
 

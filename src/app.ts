@@ -5,6 +5,7 @@ import User from './models/user';
 import Account from './models/accounts';
 import Transaction from './models/transactions';
 import userRoute from './routes/userRoute';
+import publicRoute from "./routes/publicRoute"
 
 const app = express();
 
@@ -29,6 +30,7 @@ try {
 
 
 app.use('/', userRoute);
+app.use('/auth', publicRoute)
 
 
 
