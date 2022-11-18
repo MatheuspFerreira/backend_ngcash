@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import userController from '../controllers/userController';
+import transactionController from '../controllers/transactionController';
 const router = Router();
 
 router 
-    .get('/', )
-    .post('/create', <any>userController.create)
+
+    .get('/all',  transactionController.getAll)
 
 
 export default router;

@@ -26,7 +26,6 @@ export async function createToken(user: ITokenUser) {
 
 export async function verifyToken(token: string) {
   try {
-    // @todo: Verificar se o usuário ainda existe
     
     return Jwt.verify(token, SECRET);
 

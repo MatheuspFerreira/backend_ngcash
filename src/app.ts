@@ -6,6 +6,8 @@ import Account from './models/accounts';
 import Transaction from './models/transactions';
 import userRoute from './routes/userRoute';
 import publicRoute from "./routes/publicRoute"
+import accountRoute from "./routes/accountRoute"
+import transaction from "./routes/transactionRoute"
 
 const app = express();
 
@@ -31,6 +33,9 @@ try {
 
 app.use('/', userRoute);
 app.use('/auth', publicRoute)
+app.use('/account', accountRoute)
+app.use('/transaction', transaction)
+
 
 
 
