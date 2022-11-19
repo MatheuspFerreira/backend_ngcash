@@ -51,9 +51,12 @@ export default async function createUser (data:any) {
     } catch (error) {
 
         console.log(error)
-        return {error:true, message:error}
+        return {
+            error:true, 
+            message:error
+        };
   
-    }
+    };
     
 
 }

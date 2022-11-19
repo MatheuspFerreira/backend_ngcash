@@ -28,9 +28,11 @@ try {
 } catch (error) {
     console.error('Unable to connect to the database:', error);
     
-}
+};
 
 
+
+// Routes
 app.use('/', userRoute);
 app.use('/auth', publicRoute)
 app.use('/account', accountRoute)

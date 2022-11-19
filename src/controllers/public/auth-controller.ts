@@ -20,8 +20,9 @@ export default {
   },
 
   async verify(req: Request, res: Response) {
+    const token = req.headers.authorization?.split(" ")[1] || "";
     const user =  await verifyToken(
-      req.body.token
+      token
     );
 
     return res.status(200).send(user);

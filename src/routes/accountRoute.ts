@@ -4,6 +4,7 @@ const router = Router();
 
 router 
     .get('/', accountController.getOne)
+    .post('/transfer', accountController.transfer)
 
 
 export default router;
