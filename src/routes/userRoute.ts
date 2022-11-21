@@ -4,6 +4,7 @@ const router = Router();
 
 router 
     .get('/all', userController.getAll)
+    .get('/logged', userController.logged)
     .post('/create', userController.create)
 
 

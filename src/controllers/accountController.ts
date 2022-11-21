@@ -41,20 +41,25 @@ export default  {
             )
         };
 
-        const userCashOut = user
-        const userCashIn = req.body.usercashin
-        const value = parseInt(req.body.value )
+        const userCashOut = user;
+        const userCashIn = req.body.usercashin;
+        const value = parseInt(req.body.value);
 
-        const transfer = await transferBalance (userCashOut, userCashIn, value)
+        if(user.id === userCashIn.id){
+            return res.status(400).send({
+                error:true,
+                message:"Essa operação não é permita!"
+            });
+        };
+
+        const transfer = await transferBalance (userCashOut, userCashIn, value);
 
         if(transfer?.error){
             return res.status(400).send(transfer);
         };
 
-        return res.status(200).send(transfer)
+        return res.status(200).send(transfer);
 
     }
 
-
-
-}
+};

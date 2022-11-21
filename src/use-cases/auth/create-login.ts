@@ -28,7 +28,7 @@ export default async function createLogin (credentials:ICreateLogin) {
   if(!userExist){
     return({
       error:true,
-      message:"Erro no login, suas credenciais estão erradas!"
+      message:"Erro no login, credenciais inválidas"
 
     })
   }
@@ -38,7 +38,7 @@ export default async function createLogin (credentials:ICreateLogin) {
   if(!comparePassword) {
     return({
       error:true,
-      message:"Erro no login, suas credenciais estão erradas!"
+      message:"Erro no login, credenciais inválidas"
 
     })
   }
@@ -46,5 +46,7 @@ export default async function createLogin (credentials:ICreateLogin) {
   const token = await createToken(userExist)
 
   return token;
+
+  
 
 }
