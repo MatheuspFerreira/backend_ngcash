@@ -2,7 +2,7 @@
 
 
 
-* Teste tecnico realizado para vaga de desenvolvedor na NG_cash 
+* Teste técnico realizado para vaga de desenvolvedor na NG_cash 
 * Projeto Full Stack
 
 ##  Backend Techs Utilizadas
