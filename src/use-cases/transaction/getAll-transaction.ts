@@ -14,9 +14,9 @@ export default async function getAllTransactions () {
                 error:true,
                 message:"Error, Você não possui autorização!"
             }
-        )
+        );
         
-    }
+    };
        
 
 }

@@ -72,11 +72,10 @@ export default async function transferBalance (userCashOut:any, userCashIn:any, 
             );
 
             if(parseInt(newBalanceCashIn[1][0].dataValues.balance) === accountCashIn.balance && parseInt(newBalanceCashOut[1][0].dataValues.balance) === accountCashOut.balance) {
-                const register = await <any> Transaction.create({
+                await <any> Transaction.create({
                     value:value,
                     debitedAccountId:parseInt(newBalanceCashOut[1][0].dataValues.id),
                     creditedAccountId:accountCashIn.id
-
 
                 });
 
@@ -87,11 +86,6 @@ export default async function transferBalance (userCashOut:any, userCashIn:any, 
                     }
                 );
             };
-
-            
-
-
-
 
         }else if(value > accountCashOut.balance){
             return (
@@ -124,6 +118,4 @@ export default async function transferBalance (userCashOut:any, userCashIn:any, 
         
     };
     
-
-
 };

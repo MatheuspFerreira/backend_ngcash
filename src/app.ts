@@ -40,10 +40,4 @@ app.use('/transaction', transaction)
 
 
 
-
-app.get('/',(req, res)=> {
-    res.status(200).send({alive:true})
-})
-
-
 export default app;

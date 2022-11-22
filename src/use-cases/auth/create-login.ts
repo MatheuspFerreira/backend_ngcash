@@ -5,7 +5,6 @@ import bcrypt from "bcrypt";
 
 
 
-
 export default async function createLogin (credentials:ICreateLogin) {
 
   const {username, password} = credentials;
@@ -16,8 +15,8 @@ export default async function createLogin (credentials:ICreateLogin) {
         error:true, 
         message:"Erro, Você precisa enviar username e passaword"
       }
-    )
-  }
+    );
+  };
 
   const userExist = <any> await User.findOne(
     { where: { 
@@ -30,8 +29,8 @@ export default async function createLogin (credentials:ICreateLogin) {
       error:true,
       message:"Erro no login, credenciais inválidas"
 
-    })
-  }
+    });
+  };
 
   const comparePassword = await bcrypt.compare (password, userExist.password)
 
@@ -40,10 +39,10 @@ export default async function createLogin (credentials:ICreateLogin) {
       error:true,
       message:"Erro no login, credenciais inválidas"
 
-    })
-  }
+    });
+  };
 
-  const token = await createToken(userExist)
+  const token = await createToken(userExist);
 
   return token;
 

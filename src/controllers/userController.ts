@@ -7,6 +7,7 @@ import userLogged from "../use-cases/user/logged-user";
 
 export default  {
     async create(req:Request, res:Response) { // public route (Create new user)
+        console.log(req.body)
         
         const newUser = await createUser(req.body);
 
@@ -35,7 +36,7 @@ export default  {
                     error:true,
                     message:"Error, Você não possui autorização!"
                 }
-            )
+            );
         };
 
         const data = await getAll() as any
@@ -57,7 +58,7 @@ export default  {
                     error:true,
                     message:"Error, Você não possui autorização!"
                 }
-            )
+            );
         };
 
         const userData = await userLogged(user);

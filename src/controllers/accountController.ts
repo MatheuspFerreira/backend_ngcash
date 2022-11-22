@@ -15,7 +15,7 @@ export default  {
                     error:true,
                     message:"Error, Você não possui autorização!"
                 }
-            )
+            );
         };
         
         const userAccount = await <any> getBalance(user);
@@ -27,7 +27,6 @@ export default  {
         
     },
 
-
     async transfer(req:Request, res:Response) {
         const token = req.headers.authorization?.split(" ")[1] || "";
         const user = await <any> verifyToken(token);
@@ -38,7 +37,7 @@ export default  {
                     error:true,
                     message:"Error, Você não possui autorização!"
                 }
-            )
+            );
         };
 
         const userCashOut = user;

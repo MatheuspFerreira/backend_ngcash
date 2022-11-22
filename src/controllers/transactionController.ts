@@ -14,7 +14,7 @@ export default  {
                     error:true,
                     message:"Error, Você não possui autorização!"
                 }
-            )
+            );
         };
         
         const allTransactions = await <any>getAllTransactions();
@@ -25,7 +25,5 @@ export default  {
         return res.status(200).send(allTransactions);
         
     }
-
-
 
 }

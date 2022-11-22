@@ -18,10 +18,8 @@ export async function createToken(user: ITokenUser) {
           username:user.username,
           accountId:user.accountId
 
-            
-
         }, SECRET, { expiresIn: '24h' })
-      }
+  }
 }
 
 export async function verifyToken(token: string) {
