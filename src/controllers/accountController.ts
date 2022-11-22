@@ -42,7 +42,7 @@ export default  {
 
         const userCashOut = user;
         const userCashIn = req.body.usercashin;
-        const value = parseInt(req.body.value);
+        const value = parseFloat(req.body.value);
 
         if(user.id === userCashIn.id){
             return res.status(400).send({

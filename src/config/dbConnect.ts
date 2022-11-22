@@ -2,11 +2,11 @@ import { Sequelize } from "sequelize";
 
 const sequelize = new Sequelize( {
     dialect: 'postgres',
-    host: 'teste.crnkyuswrowk.us-east-1.rds.amazonaws.com',
+    host: 'ngcash.cwlwyw4npfr5.us-east-1.rds.amazonaws.com',
     port: 5432,
     database: 'ng_cash',
     username: 'root',
-    password: 'teste1234',
+    password: 'ngc4$h9898',
     dialectOptions: {
         ssl: {
             rejectUnauthorized: false

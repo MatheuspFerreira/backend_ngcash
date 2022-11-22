@@ -11,7 +11,7 @@ const Account = database.define('accounts', {
     },
 
     balance: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.FLOAT,
         allowNull:false
         
     },

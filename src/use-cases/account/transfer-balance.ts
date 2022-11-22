@@ -3,7 +3,7 @@ import Transaction from "../../models/transactions";
 
 
 export default async function transferBalance (userCashOut:any, userCashIn:any, value:number) {
-
+   
     if(!userCashIn || !userCashOut || userCashIn ==="" || userCashOut ==="") {
         return (
             {
@@ -38,9 +38,11 @@ export default async function transferBalance (userCashOut:any, userCashIn:any, 
         });
 
         if(parseInt(accountCashOut.balance) >= value) {
-            accountCashOut.balance = parseInt(accountCashOut.balance) - value;
-            accountCashIn.balance = parseInt(accountCashIn.balance) + value;
-        
+            accountCashOut.balance = parseFloat(accountCashOut.balance) - value;
+            accountCashIn.balance = parseFloat(accountCashIn.balance) + value;
+            accountCashIn.balance = accountCashIn.balance;
+            accountCashOut.balance = accountCashOut.balance
+    
             const newBalanceCashOut = await <any>Account.update(
                 {
                     balance:accountCashOut.balance
@@ -71,10 +73,10 @@ export default async function transferBalance (userCashOut:any, userCashIn:any, 
  
             );
 
-            if(parseInt(newBalanceCashIn[1][0].dataValues.balance) === accountCashIn.balance && parseInt(newBalanceCashOut[1][0].dataValues.balance) === accountCashOut.balance) {
+            if(newBalanceCashIn[1][0].dataValues.balance === accountCashIn.balance && newBalanceCashOut[1][0].dataValues.balance === accountCashOut.balance) {
                 await <any> Transaction.create({
                     value:value,
-                    debitedAccountId:parseInt(newBalanceCashOut[1][0].dataValues.id),
+                    debitedAccountId:newBalanceCashOut[1][0].dataValues.id,
                     creditedAccountId:accountCashIn.id
 
                 });

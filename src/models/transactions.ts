@@ -12,7 +12,7 @@ const Transaction = database.define('transactions', {
 
     },
     value :{
-        type: Sequelize.DECIMAL,
+        type: Sequelize.FLOAT,
         allowNull:false
 
     },
